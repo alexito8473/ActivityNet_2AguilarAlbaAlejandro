@@ -35,6 +35,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ejercicio\Main.cs" />
     <Compile Include="Ejercicio\Pedirdatos.cs" />
+    <Compile Include="Ejercicio\Figura.cs" />
+    <Compile Include="Ejercicio\Rectangulo.cs" />
+    <Compile Include="Ejercicio\Circulo.cs" />
+    <Compile Include="Ejercicio\Triángulo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Ejercicio\" />

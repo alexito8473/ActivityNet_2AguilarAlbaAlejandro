@@ -86,22 +86,17 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
                     Console.Write( "El numero que sea valido" );
                 }
             } while ( !salida );
-
             return numero;
         }
 
-        public int PedirInt(String frase) {
-            Console.Write( frase );
-            return PedirInt();
-        }
 
-        public double PedirDouble() {
+        public float PedirFloat() {
             bool salida = false;
-            double numero = 0.0;
+            float numero = 0.0f;
             do {
                 try {
                     Console.Write( "\n-> " );
-                    numero = double.Parse( Console.ReadLine() );
+                    numero = float.Parse( Console.ReadLine() );
                     salida = true;
                 } catch {
                     Console.Write( "El numero que sea valido" );
@@ -110,13 +105,12 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
 
             return numero;
         }
-
-        public double PedirDoublePositivo() {
+        public float PedirFloatPositivo() {
             bool salida = false;
-            double numero = 0.0;
+            float numero = 0.0f;
             do {
-                numero = PedirDouble();
-                if ( numero > 0.0 ) {
+                numero = PedirFloat();
+                if ( numero > 0.0f ) {
                     salida = true;
                 } else {
                     Console.Write( "Debe ser mayor a 0" );
@@ -125,18 +119,16 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
 
             return numero;
         }
-
-        public double PedirDoublePositivo(string frase) {
+        public float PedirFloatPositivo(string frase ) {
             Console.Write( frase );
-            return PedirDoublePositivo();
+            return PedirFloatPositivo();
         }
-
         public int PedirIntPositivo() {
             bool salida = false;
             int numero = 0;
             do {
                 numero = PedirInt();
-                if (numero >= 18) {
+                if (numero > 0) {
                     salida = true;
                 } else{
                     Console.Write( "Debe ser mayor de edad" );
