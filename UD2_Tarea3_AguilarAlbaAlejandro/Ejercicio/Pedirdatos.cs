@@ -1,56 +1,35 @@
 ﻿using System;
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
     public class Pedirdatos {
-        public bool Pedirbool(String linea1,String linea2) {
-            bool salida = false;
-            bool resultado = false; string frase;
+
+        /// <summary>
+        /// Método para puslsar enter y continuar
+        /// </summary>
+        /// <remarks>
+        /// Consiste en un bucle que va apedir infinitamente un string hasta que lo envie vacio, esto es debido
+        /// porque queremos que el usuario le de a enter para realizar una pausa.
+        /// Después la consola de la terminal se limpiara.
+        /// </remarks>
+        public void PedirstringIntro() {
             do {
-                Console.Write( "Escribe un {0} o un {1} \n",linea1,linea2 );
-                frase = PedirString();
-                if ( frase.Equals( linea1 ) ) {
-                    salida = true;
-                    resultado = true;
-                } else if ( frase.Equals( linea2 ) ) {
-                    salida = true;
-                    resultado = false;
-                } else {
-                    Console.Write( "Escribe bien el si o no\n" );
-                }
-            } while ( !salida );
-            return resultado;
+                Console.Write( "PULSA INTRO PARA CONTINUAR" );
+            } while ( !string.IsNullOrEmpty( Console.ReadLine().Trim() ) );
+            Console.Clear();
         }
-
-        internal int PedirIntEnRango() {
-            throw new NotImplementedException();
-        }
-
-        public String PedirString() {
-            bool salida = false;
-            String frase;
-            do {
-                Console.Write( "\n->" );
-                frase = Console.ReadLine().Trim();
-                if ( frase.Length > 0 ) {
-                    salida = true;
-                } else {
-                    Console.Write( "Escribe algo\n" );
-                }
-            } while ( !salida );
-            return frase;
-        }
-        public String PedirStringSinControl() {
-            Console.Write( "\n->" );
-            return Console.ReadLine().Trim();
-        }
-        public String PedirStringSinControl(string frase) {
-            Console.Write( frase );
-            return PedirStringSinControl();
-        }
-        public String PedirString(string muestra) {
-            Console.Write( muestra );
-            return PedirString();
-        }
-
+        /// <summary>
+        /// Método para pedir un numero entero que debera estar situado en el rango de 2 numeros.
+        /// </summary>
+        /// <remarks>
+        /// Consiste en dos numeros que se observara cual de ellos es el mayor, y se le pedira al usuario
+        /// un numero que ente situado entre esos dos, en el caso que no haya acertado se le mostrara un mensaje para 
+        /// decirle el rango, además antes de introducir el dato ya sera informado, y todo pasara infinitamente 
+        /// hasta que se coloque el dato bién.
+        /// </remarks>
+        /// <param name="num">Numero máximo o minimo del rango</param>
+        /// <param name="num2">Numero máximo o minimo del rango</param>
+        /// <returns>
+        /// Devolvera un numero int que este comprendido entre los numeros colocados por parametro.
+        /// </returns>
         public int PedirIntEnRango(int num, int num2) {
             bool salida = false;
             int numero1;
@@ -74,6 +53,16 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
             } while (!salida);
             return datoSalida;
         }
+        /// <summary>
+        /// Método para pedir un numero entero.
+        /// </summary>
+        /// <remarks>
+        /// Consiste en perdir un número entero constantemene, y si no lo introduce se le volvera a pedir con un mensaje escrito
+        /// indicando que lo escriba bien, hasta que el usuario introduzca el dato correctamente no sera parara de pedirlo.
+        /// </remarks>
+        /// <returns>
+        /// Devolvera un numero entero.
+        /// </returns>
         public int PedirInt() {
             bool salida = false;
             int numero = 0;
@@ -89,7 +78,16 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
             return numero;
         }
 
-
+        /// <summary>
+        /// Método para pedir un numero float.
+        /// </summary>
+        /// <remarks>
+        /// Consiste en perdir un número float constantemene, y si no lo introduce se le volvera a pedir con un mensaje escrito
+        /// indicando que lo escriba bien, hasta que el usuario introduzca el dato correctamente no sera parara de pedirlo.
+        /// </remarks>
+        /// <returns>
+        /// Devolvera un numero float.
+        /// </returns>
         public float PedirFloat() {
             bool salida = false;
             float numero = 0.0f;
@@ -105,10 +103,24 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
 
             return numero;
         }
-        public float PedirFloatPositivo() {
+        /// <summary>
+        /// Método para pedir un numero float que sea mayor que 0.
+        /// </summary>
+        /// <remarks>
+        /// Consiste que mediante la ayuda del otro metodo de pedir el float, vamos a validar 
+        /// los que son unicamente mayores que 0;
+        /// </remarks>
+        /// <param name="frase">
+        /// Mensaje personalizado
+        /// </param>
+        /// <returns>
+        /// Devolvera un numero float mayor que 0.
+        /// </returns>
+        public float PedirFloatPositivo( string frase ) {
             bool salida = false;
             float numero = 0.0f;
             do {
+                Console.Write( frase );
                 numero = PedirFloat();
                 if ( numero > 0.0f ) {
                     salida = true;
@@ -119,14 +131,24 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
 
             return numero;
         }
-        public float PedirFloatPositivo(string frase ) {
-            Console.Write( frase );
-            return PedirFloatPositivo();
-        }
-        public int PedirIntPositivo() {
+        /// <summary>
+        /// Método para pedir un numero entero que sea mayor que 0.
+        /// </summary>
+        /// <remarks>
+        /// Consiste que mediante la ayuda del otro metodo de pedir el entero, vamos a validar 
+        /// los que son unicamente mayores que 0;
+        /// </remarks>
+        /// <param name="frase">
+        /// Mensaje personalizado
+        /// </param>
+        /// <returns>
+        /// Devolvera un numero entero mayor que 0.
+        /// </returns>
+        public int PedirIntPositivo( string frase ) {
             bool salida = false;
             int numero = 0;
             do {
+                Console.Write( frase );
                 numero = PedirInt();
                 if (numero > 0) {
                     salida = true;
@@ -136,11 +158,6 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
             } while ( !salida );
 
             return numero;
-        }
-
-        public int PedirIntPositivo(string frase) {
-            Console.Write( frase );
-            return PedirIntPositivo();
         }
     }
 }
