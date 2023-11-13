@@ -8,17 +8,90 @@ using UD2_Tarea3_AguilarAlbaAlejandro.Tarea3;
 // Curso: 2023/2024
 ///////////////////////////////////////////
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
+    /// <summary>
+    /// Clase donde se ejecuta toda la lógica de procesamiento.
+    /// </summary>
+    /// <remarks>
+    /// Clase donde se ejecuta toda la lógica de procesamiento,
+    /// donde se instancia las diferentes clases.
+    /// </remarks>
     public class MainClass {
+        /// <summary>
+        /// Atributo constante definido para salir del menu
+        /// </summary>
+        /// <remarks>
+        ///  Atributo constante definido para salir del menu
+        /// </remarks>
         private const int SALIR = 0;
+        /// <summary>
+        /// Atributo constante definido para entrar en el apartado del Rectangulo
+        /// </summary>
+        /// <remarks>
+        /// Atributo constante definido para entrar en el apartado del Rectangulo
+        /// </remarks>
         private const int RECTANGULO = 1;
+        /// <summary>
+        /// Atributo constante definido para entrar en el apartado del Circulo
+        /// </summary>
+        /// <remarks>
+        /// Atributo constante definido para entrar en el apartado del Circulo
+        /// </remarks>
         private const int CIRCULO = 2;
+        /// <summary>
+        /// Atributo constante definido para entrar en el apartado del Triangulo
+        /// </summary>
+        /// <remarks>
+        /// Atributo constante definido para entrar en el apartado del Triangulo
+        /// </remarks>
         private const int TRIANGULO = 3;
+        /// <summary>
+        /// Atributo constante definido para saber el contenido total de acciones que tiene el menu
+        /// </summary>
+        /// <remarks>
+        /// Atributo constante definido para saber el contenido total de acciones que tiene el menu
+        /// </remarks>
         private const int MAXIMO = 3;
+        /// <summary>
+        /// Atributo que sirve para las peticiones del teclado.
+        /// </summary>
+        /// <remarks>
+        /// Atributo que instancia a la clase PedirDatos para poder usar sus métodos para pedir datos del usuario.
+        /// </remarks>
         private Pedirdatos per= new Pedirdatos();
+        /// <summary>
+        /// Atributo string para definir el menu 
+        /// </summary>
+        /// <remarks>
+        /// Atributo string predefinir el texto que tendra el encabezado del menu 
+        /// </remarks>
         private const string TEXT_MENU="----MENU---";
+        /// <summary>
+        /// Atributo string para definir la salida 
+        /// </summary>
+        /// <remarks>
+        /// Atributo string predefinir el texto que tendra el menu sobre la salida.
+        /// </remarks>
         private string TEXT_SALIDA = String.Format("{0} -> Salida del programa",SALIR);
+        /// <summary>
+        /// Atributo string para definir la rectangulo 
+        /// </summary>
+        /// <remarks>
+        /// Atributo string predefinir el texto que tendra el menu sobre la rectangulo.
+        /// </remarks>
         private string TEXT_RECTANGULO = String.Format( "{0} -> Uso del rectángulo", RECTANGULO );
+        /// <summary>
+        /// Atributo string para definir la circulo 
+        /// </summary>
+        /// <remarks>
+        /// Atributo string predefinir el texto que tendra el menu sobre la circulo.
+        /// </remarks>
         private string TEXT_CIRCULO = String.Format( "{0} -> Uso del círculo", CIRCULO );
+        /// <summary>
+        /// Atributo string para definir la triangulo 
+        /// </summary>
+        /// <remarks>
+        /// Atributo string predefinir el texto que tendra el menu sobre la triangulo.
+        /// </remarks>
         private string TEXT_TRIANGULO = String.Format( "{0} -> Uso del triángulo", TRIANGULO );
 
         /// <summary>

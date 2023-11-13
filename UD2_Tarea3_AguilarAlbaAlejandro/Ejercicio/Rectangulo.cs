@@ -1,8 +1,26 @@
 ﻿using System;
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
+    /// <summary>
+    /// Clase Rectangulo, descendente de Figura
+    /// </summary>
+    /// <remarks>
+    /// Clase modelo del rectangulo, cuya instancia almacenara sus dos lados
+    /// y mostrara tanto su perimetro o su area.
+    /// </remarks>
     public class Rectangulo:Figura {
-
+        /// <summary>
+        /// Propiedad de la clase Rectangulo, un lado
+        /// </summary>
+        /// <remarks>
+        /// Atributo float que almacenara un lado del rectangulo.
+        /// </remarks>
         private float lado1;
+        /// <summary>
+        /// Propiedad de la clase Rectangulo, un lado
+        /// </summary>
+        /// <remarks>
+        /// Atributo float que almacenara un lado del rectangulo.
+        /// </remarks>
         private float lado2;
         /// <summary>
         /// Constructor de la clase Rectangulo

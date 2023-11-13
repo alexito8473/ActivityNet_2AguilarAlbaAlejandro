@@ -1,8 +1,33 @@
 ﻿using System;
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
+    /// <summary>
+    /// Clase Triangulo, descendente de Figura
+    /// </summary>
+    /// <remarks>
+    /// Clase modelo del Triangulo, cuya instancia almacenara sus tres lados
+    /// y mostrara tanto su perimetro o su area.
+    /// </remarks>
     public class Triángulo:Figura {
+        /// <summary>
+        /// Propiedad de la clase Triangulo, un lado
+        /// </summary>
+        /// <remarks>
+        /// Atributo float que almacenara un lado del Triangulo.
+        /// </remarks>
         private float lado1;
+        /// <summary>
+        /// Propiedad de la clase Triangulo, un lado
+        /// </summary>
+        /// <remarks>
+        /// Atributo float que almacenara un lado del Triangulo.
+        /// </remarks>
         private float lado2;
+        /// <summary>
+        /// Propiedad de la clase Triangulo, un lado
+        /// </summary>
+        /// <remarks>
+        /// Atributo float que almacenara un lado del Triangulo.
+        /// </remarks>
         private float lado3;
         /// <summary>
         /// Constructor de la clase Triángulo

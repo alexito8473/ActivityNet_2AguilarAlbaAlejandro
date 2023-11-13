@@ -1,6 +1,19 @@
 ﻿using System;
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
+    /// <summary>
+    /// Clase Circulo, descendente de Figura
+    /// </summary>
+    /// <remarks>
+    /// Clase modelo del circulo, cuya instancia almacenara el radio del circulo
+    /// y podra mostrar tanto su perimetro o su area.
+    /// </remarks>
     public class Circulo:Figura {
+        /// <summary>
+        /// Propiedad de la clase Circulo, el radio
+        /// </summary>
+        /// <remarks>
+        /// Atributo float que almacenara el radio del circulo.
+        /// </remarks>
         private float radio;
         /// <summary>
         /// Constructor de la clase Círculo

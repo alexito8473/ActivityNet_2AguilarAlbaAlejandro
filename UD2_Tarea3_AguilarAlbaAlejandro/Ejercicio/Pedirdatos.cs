@@ -1,7 +1,13 @@
 ﻿using System;
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Tarea3 {
+    /// <summary>
+    /// Clase creada para las comunicaciones del usuario a la máquina.
+    /// </summary>
+    /// <remarks>
+    /// La clase es utilizada para que el usuario de forma comoda, y sin errores pueda
+    /// entregar dados y también que de datos restringidos a decision del programador.
+    /// </remarks>
     public class Pedirdatos {
-
         /// <summary>
         /// Método para puslsar enter y continuar
         /// </summary>
