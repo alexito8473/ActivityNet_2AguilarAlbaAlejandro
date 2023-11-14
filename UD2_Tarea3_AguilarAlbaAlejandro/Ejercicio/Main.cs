@@ -8,95 +8,36 @@ using UD2_Tarea3_AguilarAlbaAlejandro.Tarea3;
 // Curso: 2023/2024
 ///////////////////////////////////////////
 namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
-    /// <summary>
-    /// Clase donde se ejecuta toda la lógica de procesamiento.
-    /// </summary>
+    /// <summary> Clase donde se ejecuta toda la lógica de procesamiento. </summary>
     /// <remarks>
     /// Clase donde se ejecuta toda la lógica de procesamiento,
     /// donde se instancia las diferentes clases.
     /// </remarks>
     public class MainClass {
-        /// <summary>
-        /// Atributo constante definido para salir del menu
-        /// </summary>
-        /// <remarks>
-        ///  Atributo constante definido para salir del menu
-        /// </remarks>
-        private const int SALIR = 0;
-        /// <summary>
-        /// Atributo constante definido para entrar en el apartado del Rectangulo
-        /// </summary>
-        /// <remarks>
-        /// Atributo constante definido para entrar en el apartado del Rectangulo
-        /// </remarks>
+        /// <summary> Atributo constante definido para salir del menu </summary>
+       private const int SALIR = 0;
+        /// <summary> Atributo constante definido para entrar en el apartado del Rectangulo </summary>
         private const int RECTANGULO = 1;
-        /// <summary>
-        /// Atributo constante definido para entrar en el apartado del Circulo
-        /// </summary>
-        /// <remarks>
-        /// Atributo constante definido para entrar en el apartado del Circulo
-        /// </remarks>
+        /// <summary> Atributo constante definido para entrar en el apartado del Circulo </summary>
         private const int CIRCULO = 2;
-        /// <summary>
-        /// Atributo constante definido para entrar en el apartado del Triangulo
-        /// </summary>
-        /// <remarks>
-        /// Atributo constante definido para entrar en el apartado del Triangulo
-        /// </remarks>
+        /// <summary> Atributo constante definido para entrar en el apartado del Triangulo </summary>
         private const int TRIANGULO = 3;
-        /// <summary>
-        /// Atributo constante definido para saber el contenido total de acciones que tiene el menu
-        /// </summary>
-        /// <remarks>
-        /// Atributo constante definido para saber el contenido total de acciones que tiene el menu
-        /// </remarks>
+        /// <summary> Atributo constante definido para saber el contenido total de acciones que tiene el menu </summary>
         private const int MAXIMO = 3;
-        /// <summary>
-        /// Atributo que sirve para las peticiones del teclado.
-        /// </summary>
-        /// <remarks>
-        /// Atributo que instancia a la clase PedirDatos para poder usar sus métodos para pedir datos del usuario.
-        /// </remarks>
+        /// <summary> Atributo que sirve para las peticiones del teclado. </summary>
+        /// <remarks> Atributo que instancia a la clase PedirDatos para poder usar sus métodos para pedir datos del usuario. </remarks>
         private Pedirdatos per= new Pedirdatos();
-        /// <summary>
-        /// Atributo string para definir el menu 
-        /// </summary>
-        /// <remarks>
-        /// Atributo string predefinir el texto que tendra el encabezado del menu 
-        /// </remarks>
+        /// <summary> Atributo string para definir el menu </summary>
         private const string TEXT_MENU="----MENU---";
-        /// <summary>
-        /// Atributo string para definir la salida 
-        /// </summary>
-        /// <remarks>
-        /// Atributo string predefinir el texto que tendra el menu sobre la salida.
-        /// </remarks>
+        /// <summary> Atributo string para definir la salida </summary>
         private string TEXT_SALIDA = String.Format("{0} -> Salida del programa",SALIR);
-        /// <summary>
-        /// Atributo string para definir la rectangulo 
-        /// </summary>
-        /// <remarks>
-        /// Atributo string predefinir el texto que tendra el menu sobre la rectangulo.
-        /// </remarks>
+        /// <summary> Atributo string para definir la rectangulo  </summary>
         private string TEXT_RECTANGULO = String.Format( "{0} -> Uso del rectángulo", RECTANGULO );
-        /// <summary>
-        /// Atributo string para definir la circulo 
-        /// </summary>
-        /// <remarks>
-        /// Atributo string predefinir el texto que tendra el menu sobre la circulo.
-        /// </remarks>
+        /// <summary> Atributo string para definir la circulo </summary>
         private string TEXT_CIRCULO = String.Format( "{0} -> Uso del círculo", CIRCULO );
-        /// <summary>
-        /// Atributo string para definir la triangulo 
-        /// </summary>
-        /// <remarks>
-        /// Atributo string predefinir el texto que tendra el menu sobre la triangulo.
-        /// </remarks>
+        /// <summary> Atributo string para definir la triangulo </summary>
         private string TEXT_TRIANGULO = String.Format( "{0} -> Uso del triángulo", TRIANGULO );
-
-        /// <summary>
-        /// Método para iniciar el sistema del menu.
-        /// </summary>
+        /// <summary> Método para iniciar el sistema del menu. </summary>
         /// <remarks>
         /// No es necesario hacer nada, al ejecutar el programa fucniona automaticamente, 
         /// llama al método menu para que inicie todo el sistema.
@@ -104,12 +45,8 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
         private void Tarea3() {
             Menu();
         }
-        /// <summary>
-        /// Método que sirve para crear el texto del menu.
-        /// </summary>
-        /// <remarks>
-        /// El método sirve para crear un texto que sera visualizado en la terminal.
-        /// </remarks>
+        /// <summary> Método que sirve para crear el texto del menu. </summary>
+        /// <remarks> El método sirve para crear un texto que sera visualizado en la terminal. </remarks>
         private void TEXTMENU() {
             Console.WriteLine( TEXT_MENU );
             Console.WriteLine( TEXT_SALIDA );
@@ -117,11 +54,9 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
             Console.WriteLine( TEXT_CIRCULO );
             Console.WriteLine( TEXT_TRIANGULO );
         }
-        /// <summary>
-        /// Método donde se ejecuta toda la lógica del menu.
-        /// </summary>
+        /// <summary> Método donde se ejecuta toda la lógica del menu. </summary>
         /// <remarks>
-        ///  Este método se encarga de pedir los datos del usuario, 
+        /// Este método se encarga de pedir los datos del usuario, 
         /// con ello tenemos un menu que el usuario debera decir que acción sera.
         /// Las acciones son 4, salir, crear un triangulo a partir de 3 lado, 
         /// crear un rectangulo con 2 lado y por ultimo crear un circulo con el radio.
@@ -170,9 +105,7 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
             Console.Write( "Salida del programa con exito" );
         }
 
-        /// <summary>
-        /// Método que decide si existe o no un triangulo a partir de 3 lados pasados por una lista.
-        /// </summary>
+        /// <summary> Método que decide si existe o no un triangulo a partir de 3 lados pasados por una lista. </summary>
         /// <remarks>
         ///  El método coge los 3 lados que recibe por parametro mediante una lista.
         ///  Primero se comprueba los 3 lados son iguales, en el caso que no, se comprobaria
@@ -181,12 +114,8 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
         ///  si los dos mas pequeños son mas grande que el mayor lado significa que es un triangulo.
         /// </remarks>
         /// <param name="listaLados">Todos los lados que tiene un triangulo</param>
-        /// <exception cref="InvalidOperationException">
-        /// No existe triangulo con más de 3 lados.
-        /// </exception>
-        /// <returns>
-        /// Retorna un false si no es un triángulo y retorna true si es un triangulo.
-        /// </returns>
+        /// <exception cref="InvalidOperationException"> No existe triangulo con más de 3 lados.</exception>
+        /// <returns>Retorna un false si no es un triángulo y retorna true si es un triangulo. </returns>
         private bool Controlador( List<float> listaLados ) {
             float numeroMaximo = listaLados.Max();
             int contador = 0;
@@ -216,12 +145,8 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
             }
             return false;
         }
-        /// <summary>
-        /// Método estático que arranca el programa
-        /// </summary>
-        /// <remarks>
-        ///  Método estático que arranca el programa
-        /// </remarks>
+        /// <summary> Método estático que arranca el programa </summary>
+        /// <remarks> Método estático que arranca el programa </remarks>
         /// <param name="args">lista de string</param>
         public static void Main( string[] args ) {
             new MainClass().Tarea3();
