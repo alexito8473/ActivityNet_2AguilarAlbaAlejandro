@@ -37,6 +37,8 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
         private string TEXT_CIRCULO = String.Format( "{0} -> Uso del círculo", CIRCULO );
         /// <summary> Atributo string para definir la triangulo </summary>
         private string TEXT_TRIANGULO = String.Format( "{0} -> Uso del triángulo", TRIANGULO );
+        /// <summary> Atributo que instancia la figura </summary>
+        private Figura figura = null;
         /// <summary> Método para iniciar el sistema del menu. </summary>
         /// <remarks>
         /// No es necesario hacer nada, al ejecutar el programa fucniona automaticamente, 
@@ -64,10 +66,6 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
         /// </remarks>
         private void Menu() {
             bool salida = false;
-            float lado1;
-            float lado2;
-            List<float> listaLados= new List<float>();
-            Figura figura;
             Console.WriteLine("Programa sobre las figuras geométricas");
             do {
                 TEXTMENU();
@@ -76,35 +74,57 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
                         salida = true;
                         break;
                     case RECTANGULO:
-                            lado1 = per.PedirFloatPositivo( "Introduce el primer lado del trinagulo");
-                            lado2 = per.PedirFloatPositivo( "Introduce el segundo lado del trinagulo" );
-                            figura = new Rectangulo( lado1 ,lado2);
-                        Console.Write("El perimetro del rectangulo es -> {0}\nEl area del rectángulo es -> {1}\n", figura.Perimetro(), figura.Area());
-                        per.PedirstringIntro();
+                        CrearRectangulo();
                         break;
                     case CIRCULO:
-                        lado1 = per.PedirFloatPositivo( "Introduce el radio del circulo" );
-                        figura = new Circulo(lado1);
-                        Console.Write( "El perimetro del ciruclo es -> {0}\nEl area del ciruclo es -> {1}\n", figura.Perimetro(), figura.Area() );
-                        per.PedirstringIntro();
+                        CrearCirculo();
                         break;
                     case TRIANGULO:
-                        Console.Write( "Para formar un triangulo es necesario saber que el lado más grande nunca podra ser mayor que la suma de sus otros dos lados\n" );
-                        do {
-                            listaLados.Clear();
-                            listaLados.Add( per.PedirFloatPositivo( "Introduce un lado1 del triangulo" ) );
-                            listaLados.Add( per.PedirFloatPositivo( "Introduce un lado2 del triangulo" ) );
-                            listaLados.Add( per.PedirFloatPositivo( "Introduce un lado3 del triangulo" ) );
-                        } while ( !Controlador( listaLados ) );
-                        figura = new Triángulo( listaLados[0], listaLados[1] , listaLados[2] );
-                        Console.Write( "El perimetro del triangulo es -> {0}\nEl area del triangulo es -> {1}\n", figura.Perimetro(), figura.Area() );
-                        per.PedirstringIntro();
+                        CrearTriangulo();
                         break;
                 }
             } while (!salida );
             Console.Write( "Salida del programa con exito" );
         }
 
+        /// <summary> Método para crear el triangulo. </summary>
+        /// <remarks>
+        /// El método pedira los datos necesario para poder instanciar el triangulo
+        /// y poder sacar su area y perimetro
+        /// </remarks>
+        private void CrearTriangulo() {
+            List<float> listaLados = new List<float>();
+            Console.Write( "Para formar un triangulo es necesario saber que el lado más grande nunca podra ser mayor que la suma de sus otros dos lados\n" );
+            do {
+                listaLados.Clear();
+                listaLados.Add( per.PedirFloatPositivo( "Introduce un lado1 del triangulo" ) );
+                listaLados.Add( per.PedirFloatPositivo( "Introduce un lado2 del triangulo" ) );
+                listaLados.Add( per.PedirFloatPositivo( "Introduce un lado3 del triangulo" ) );
+            } while ( !Controlador( listaLados ) );
+            figura = new Triángulo( listaLados[0], listaLados[1], listaLados[2] );
+            Console.Write( "El perimetro del triangulo es -> {0}\nEl area del triangulo es -> {1}\n", figura.Perimetro(), figura.Area() );
+            per.PedirstringIntro();
+        }
+        /// <summary> Método para crear el rectangulo. </summary>
+        /// <remarks>
+        /// El método pedira los datos necesario para poder instanciar el rectangulo
+        /// y poder sacar su area y perimetro
+        /// </remarks>
+        private void CrearRectangulo() {
+            figura = new Rectangulo( per.PedirFloatPositivo( "Introduce el primer lado del trinagulo" ), per.PedirFloatPositivo( "Introduce el segundo lado del trinagulo" ) );
+            Console.Write( "El perimetro del rectangulo es -> {0}\nEl area del rectángulo es -> {1}\n", figura.Perimetro(), figura.Area() );
+            per.PedirstringIntro();
+        }
+        /// <summary> Método para crear el ciruclo. </summary>
+        /// <remarks>
+        /// El método pedira los datos necesario para poder instanciar el circulo
+        /// y poder sacar su area y perimetro
+        /// </remarks>
+        private void CrearCirculo() {
+            figura = new Circulo( per.PedirFloatPositivo( "Introduce el radio del circulo" ) );
+            Console.Write( "El perimetro del ciruclo es -> {0}\nEl area del ciruclo es -> {1}\n", figura.Perimetro(), figura.Area() );
+            per.PedirstringIntro();
+        }
         /// <summary> Método que decide si existe o no un triangulo a partir de 3 lados pasados por una lista. </summary>
         /// <remarks>
         ///  El método coge los 3 lados que recibe por parametro mediante una lista.
@@ -115,7 +135,7 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
         /// </remarks>
         /// <param name="listaLados">Todos los lados que tiene un triangulo</param>
         /// <exception cref="InvalidOperationException"> No existe triangulo con más de 3 lados.</exception>
-        /// <returns>Retorna un false si no es un triángulo y retorna true si es un triangulo. </returns>
+        /// <returns> Retorna un false si no es un triángulo y retorna true si es un triangulo. </returns>
         private bool Controlador( List<float> listaLados ) {
             float numeroMaximo = listaLados.Max();
             int contador = 0;

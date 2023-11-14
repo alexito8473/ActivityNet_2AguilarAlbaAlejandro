@@ -15,7 +15,7 @@ namespace UD2_Tarea3_AguilarAlbaAlejandro.Ejercicio {
         /// <summary> Método para calcular el perimetro. </summary>
         /// <remarks>
         /// Método que se va a utilizar para que los hijos hereden el método, es decir su firma,
-        ///  debidoa a que los hijos los sobreescribira para sus intereses.
+        /// debido a a que los hijos los sobreescribira para sus intereses.
         /// </remarks>
         /// <returns> Devolvera su perimetro. </returns>
         public virtual float Perimetro() {
